@@ -1,0 +1,104 @@
+/* Tooltip */
+#tooltip {
+  position: absolute;
+  background: white;
+  border: 1px solid #78a3af;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  pointer-events: none;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+/* Dashboard Top Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+#filter-controls label {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+#year-filter {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+
+
+/* Summary Metric Cards */
+#summary-metrics {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.metric-card {
+  background: linear-gradient(to bottom, #f8fafc, #ffffff);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  min-width: 180px;
+  text-align: center;
+  flex: 1;
+  max-width: 420px;
+}
+
+.metric-card h2 {
+  margin: 0;
+  font-size: 26px;
+  color: #222;
+  font-weight: 600;
+}
+
+.metric-card p {
+  margin: 8px 0 0 0;
+  font-size: 18px;
+  color: #352ab0;
+}
+
+
+/* Bar Chart */
+.bar {
+  fill: #4877c7;
+  transition: fill 0.2s ease;
+}
+
+.bar:hover {
+  fill: #f9a826;
+}
+
+/* Scatter Plot*/
+circle {
+  fill: steelblue;
+  opacity: 0.5;
+}
+
+text {
+  font-family: sans-serif;
+}
+
+.tick text {
+  font-size: 1.5em;
+  fill: #635f5d;
+}
+
+.tick line {
+  stroke: #c0c0bb;
+}
+
+.axis-label {
+  font-size: 2em;
+  fill: #8e8883;
+}

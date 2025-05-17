@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Building Permits Project</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="styles.css" />
+	<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+	<script type="module" src="js/dashboard.js"></script>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="#" class="logo"><strong>Nichanun Pongpattarawit </strong>300402500</a>
+				</header>
+				<input type="text" id="click-value" value="" style="display: none;">
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h1>Relationship Between Elapsed Days and Project Value</h1>
+					</header>
+					<h3>Is there a relationship between the number of days a project takes (Elapsed Days) and the total
+						project value (Value)?</h3>
+					<p>How to Use This Chart <u style="cursor: pointer; color: blue;" onclick="toggleHowTo()">click</u>
+					</p>
+					<div id="howto" style="display: none;">
+						1. Select a Year (from the filter on the right) to update the chart and view building permit
+						trends for that year. <br>
+						2. Each dot represents a project.<br>
+						3. X-axis (Elapsed Days): Number of days from permit application to issuance.<br>
+						4. Y-axis (Value): Total project value (shown in millions).<br>
+					</div>
+					<div class="dashboard-header">
+						<div class="header-text">
+						</div>
+
+						<div id="filter-controls">
+							<label for="year-filter"><strong>Filter by Year:</strong></label>
+							<select id="year-filter"></select>
+						</div>
+					</div>
+					<svg id="scatter-plot-svg" width="980" height="500"></svg>
+				</section>
+				<!-- Section -->
+				<section>
+					<div class="posts" style="display: none;">
+						<svg id="line-chart-svg" width="500" height="500"></svg>
+						<svg id="bar-chart-svg" width="500" height="500"></svg>
+						<svg id="map-chart-svg" width="600" height="500"></svg>
+						<svg id="pie-chart-svg" width="600" height="500"></svg>
+					</div>
+					<div id="tooltip"></div>
+				</section>
+			</div>
+		</div>
+
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
+						<li><a href="dashboard.html">Dashboard</a></li>
+						<li><a href="barchart.html">&nbsp;&nbsp;&nbsp;Project Value by Neighborhood</a></li>
+						<li><a href="linechart.html">&nbsp;&nbsp;&nbsp;Monthly Permits Issued</a></li>
+						<li><a href="mapchart.html">&nbsp;&nbsp;&nbsp;Building Permit Locations</a></li>
+						<li><a href="piechart.html">&nbsp;&nbsp;&nbsp;Distribution of Permits</a></li>
+						<li><a href="scatterplot.html">&nbsp;&nbsp;&nbsp;Elapsed Days VS Project Value</a></li>
+					</ul>
+				</nav>
+				<footer id="footer">
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="js/assets/jquery.min.js"></script>
+	<script src="js/assets/browser.min.js"></script>
+	<script src="js/assets/breakpoints.min.js"></script>
+	<script src="js/assets/util.js"></script>
+	<script src="js/assets/main.js"></script>
+	<script>
+		function toggleHowTo() {
+			const howtoDiv = document.getElementById("howto");
+			if (howtoDiv.style.display === "none") {
+				howtoDiv.style.display = "block";
+			} else {
+				howtoDiv.style.display = "none";
+			}
+		}
+	</script>
+</body>
+
+</html>

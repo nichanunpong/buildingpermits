@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Building Permits Project</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="styles.css" />
+	<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+	<script type="module" src="js/dashboard.js"></script>
+
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="#" class="logo"><strong>Nichanun Pongpattarawit </strong>300402500</a>
+				</header>
+				<input type="text" id="click-value" value="" style="display: none;">
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h1>Building Permits Dashboard</h1>
+					</header>
+					<p>How to Use This Dashboard <u style="cursor: pointer; color: blue;"
+							onclick="toggleHowTo()">click</u></p>
+					<div id="howto" style="display: none;">
+						1. <b>Filter by Year:</b> Use the year input box to update all charts. <br>
+						2. <b>Summary Cards:</b> Show Total Permits, Total Project Value, and Average Project Value,
+						including % change from the previous year.<br>
+						3. <b>Click a Bar:</b> In the Top 10 Neighborhoods chart, click a bar to filter all charts by
+						that neighborhood.<br>
+						4. <b>Explore Trends: </b><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<b>Line Chart</b> shows permits issued month by month. <br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<b>Map</b> shows where permits were issued (darker = more permits).<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<b>Pie Chart</b> shows types of work by permit distribution. <br>
+					</div>
+					<div class="dashboard-header">
+						<div class="header-text">
+						</div>
+
+						<div id="filter-controls">
+							<label for="year-filter"><strong>Filter by Year:</strong></label>
+							<select id="year-filter"></select>
+						</div>
+					</div>
+
+
+					<div id="summary-metrics" style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
+						<div class="metric-card" id="total-permits"></div>
+						<div class="metric-card" id="total-value"></div>
+						<div class="metric-card" id="avg-value"></div>
+					</div>
+				</section>
+				<!-- Section -->
+				<section>
+					<div class="posts">
+						<article>
+							<!-- Bar Chart Section -->
+							<div class="chart-box">
+								<h2>Top 10 of Project Value by Neighborhood</h2>
+								<svg id="bar-chart-svg" width="500" height="500"></svg>
+							</div>
+						</article>
+						<article>
+							<!-- Line Chart Section -->
+							<div class="chart-box">
+								<h2>Monthly Permits Issued</h2>
+								<svg id="line-chart-svg" width="500" height="500"></svg>
+							</div>
+						</article>
+						<article>
+							<!-- Map Chart Section -->
+							<div class="chart-box">
+								<h2>Building Permit Locations</h2>
+								<svg id="map-chart-svg" width="600" height="500"></svg>
+							</div>
+						</article>
+						<article>
+							<!-- Pie Chart Section -->
+							<div class="chart-box">
+								<h2>Distribution of Permits by Type of Work</h2>
+								<svg id="pie-chart-svg" width="600" height="500"></svg>
+							</div>
+						</article>
+
+						<svg id="scatter-plot-svg" width="980" height="500" style="display:none"></svg>
+						<!-- Tooltip Div -->
+						<div id="tooltip"></div>
+					</div>
+				</section>
+			</div>
+		</div>
+
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
+						<li><a href="dashboard.html">Dashboard</a></li>
+						<li><a href="barchart.html">&nbsp;&nbsp;&nbsp;Project Value by Neighborhood</a></li>
+						<li><a href="linechart.html">&nbsp;&nbsp;&nbsp;Monthly Permits Issued</a></li>
+						<li><a href="mapchart.html">&nbsp;&nbsp;&nbsp;Building Permit Locations</a></li>
+						<li><a href="piechart.html">&nbsp;&nbsp;&nbsp;Distribution of Permits</a></li>
+						<li><a href="scatterplot.html">&nbsp;&nbsp;&nbsp;Elapsed Days VS Project Value</a></li>
+					</ul>
+				</nav>
+				<!-- Footer -->
+				<footer id="footer">
+					<!-- <p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p> -->
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="js/assets/jquery.min.js"></script>
+	<script src="js/assets/browser.min.js"></script>
+	<script src="js/assets/breakpoints.min.js"></script>
+	<script src="js/assets/util.js"></script>
+	<script src="js/assets/main.js"></script>
+	<script>
+		function toggleHowTo() {
+			const howtoDiv = document.getElementById("howto");
+			if (howtoDiv.style.display === "none") {
+				howtoDiv.style.display = "block";
+			} else {
+				howtoDiv.style.display = "none";
+			}
+		}
+	</script>
+</body>
+
+</html>
